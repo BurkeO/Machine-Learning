@@ -30,6 +30,13 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+for i = 1:m
+    X_Slice = X(i, :);
+    probs = sigmoid(all_theta * X_Slice');
+    [val, idx] = max(probs);
+    p(i,1) = idx;
+end
+
 
 
 
